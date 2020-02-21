@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
+    public Transform ballSpawnPoint;
+
     private float mousePosX;
 
     private float leftFieldBorder;
@@ -29,5 +31,10 @@ public class Paddle : MonoBehaviour
 
         leftFieldBorder = LevelManager.Instance.LeftLevelBorderX + (padSize.x / 2);
         rightFieldBorder = LevelManager.Instance.RightLevelBorderX - (padSize.x / 2);
+    }
+
+    public void ResetToDefaultPosition()
+    {
+        transform.position = new Vector3(0f, transform.position.y, 0f);
     }
 }
