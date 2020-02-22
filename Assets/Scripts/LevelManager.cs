@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    // Level grid should be 10x13
     public static LevelManager Instance;
 
     public Transform bordersParent;
