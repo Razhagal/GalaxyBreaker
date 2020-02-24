@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb087e516a0489d439b866746746fc96, type: 3}
   m_Name: NormalBrick
   m_EditorClassIdentifier: 
-  brickRenderer: {fileID: 0}
-  maxBrickStrength: 0
-  brickSprites: []
+  maxBrickStrength: 1
+  brickSprites:
+  - {fileID: 21300000, guid: 5612577d31b22c545b44a2b0946f40c3, type: 3}

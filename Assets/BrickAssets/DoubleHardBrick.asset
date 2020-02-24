@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb087e516a0489d439b866746746fc96, type: 3}
   m_Name: DoubleHardBrick
   m_EditorClassIdentifier: 
-  maxBrickStrength: 0
-  brickSprites: []
+  maxBrickStrength: 2
+  brickSprites:
+  - {fileID: 21300000, guid: 9c3852cf05b5da344a249726d481c3fe, type: 3}
+  - {fileID: 21300000, guid: 4c7155526a68f8845887616ae1909064, type: 3}
