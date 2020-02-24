@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    // Level grid should be 10x13
+    // Level grid should be 10x13  75px x 37.5px per brick
     public static LevelManager Instance;
 
     public Transform bordersParent;
