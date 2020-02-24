@@ -10,19 +10,33 @@ public class Paddle : MonoBehaviour
 
     private float leftFieldBorder;
     private float rightFieldBorder;
+
+    private bool isMoving = false;
+    private Vector2 movePos;
     private int moveSpeed = 20;
+
 
     private void Update()
     {
         if (Input.GetMouseButton(0))
         {
+            isMoving = true;
             mousePosX = LevelManager.Instance.mainCamera.ScreenToWorldPoint(Input.mousePosition).x;
-            Vector2 newPos = new Vector2(Mathf.Clamp(mousePosX, leftFieldBorder, rightFieldBorder), transform.position.y);
-            transform.position = Vector2.Lerp(transform.position, newPos, Time.deltaTime * moveSpeed);
-            //transform.position = new Vector2(Mathf.Clamp(mousePosX, leftFieldBorder, rightFieldBorder), transform.position.y);
+            movePos = new Vector2(Mathf.Clamp(mousePosX, leftFieldBorder, rightFieldBorder), transform.position.y);
         }
 
-        // TODO: If player taps/clicks somewhere, the paddle needs to finish the movement to that position in case the tap/click was brief
+        if (isMoving)
+        {
+            if (Vector2.Distance(transform.position, movePos) > 0.01f)
+            {
+                transform.position = Vector2.Lerp(transform.position, movePos, Time.deltaTime * moveSpeed);
+            }
+            else
+            {
+                isMoving = false;
+                transform.position = movePos;
+            }
+        }
     }
 
     public void CalculateFieldBordersRelativeToPadSize()
